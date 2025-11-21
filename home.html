@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Science Museum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../css-files/home.css">
+
+        <style>
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f5f5f5 0%, #e0e0e0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            gap: 20px;
+        }
+
+        .nav-button {
+            width: 400px;
+            max-width: 90%;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-transform: capitalize;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-button:active {
+            transform: translateY(-1px);
+        }
+
+        .home {
+            background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%);
+            border-radius: 50%;
+        }
+
+        .events {
+            background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+            border-radius: 50%;
+        }
+
+        .programs {
+            background: linear-gradient(135deg, #ba68c8 0%, #9c27b0 100%);
+            border-radius: 50%;
+        }
+
+        .exhibitions {
+            background: linear-gradient(135deg, #5c6bc0 0%, #3949ab 100%);
+            border-radius: 50%;
+        }
+
+        .explore {
+            background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%);
+            border-radius: 50%;
+        }
+
+        .visit {
+            background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+            border-radius: 50%;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #5dade2 0%, #4a9bb5 100%);
+            color: white;
+            padding: 40px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            align-items: start;
+        }
+
+        .social-section h2,
+        .payment-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .social-icon svg {
+            width: 35px;
+            height: 35px;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .payment-card {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .visa {
+            color: #1a1f71;
+        }
+
+        .mastercard {
+            background: linear-gradient(90deg, #eb001b 0%, #f79e1b 100%);
+            color: white;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #333;
+        }
+
+        .top-header {
+            background: linear-gradient(135deg, #4dd0e1 0%, #26c6da 100%);
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-title {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .site-title .community {
+            display: block;
+            font-size: 28px;
+        }
+
+        .site-title .science-museum {
+            display: block;
+            font-size: 32px;
+        }
+
+        .header-center {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 50px;
+        }
+
+        .search-bar {
+            display: flex;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            font-size: 16px;
+            outline: none;
+            color: #666;
+        }
+
+        .search-bar button {
+            background: white;
+            border: none;
+            padding: 0 15px;
+            cursor: pointer;
+        }
+
+        .search-icon {
+            width: 24px;
+            height: 24px;
+            fill: #999;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cart-icon {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: #26c6da;
+        }
+
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .user-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .auth-text {
+            color: white;
+            font-size: 16px;
+        }
+
+        .auth-text a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .auth-text a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            background: linear-gradient(180deg, #546e7a 0%, #455a64 100%);
+            padding: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-menu li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 18px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .nav-menu li a:hover {
+            background: rgba(225,255,255,0.1);
+        }
+
+        .hero {
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e0e0e0" width="1200" height="600"/><text x="50%" y="50%" fill="%23999" font-size="24" text-anchor="middle" dy=".3em">Hero Image Area</text></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <div class="site-title">
+            <span class="community">Community</span>
+            <span class="science-museum">Science museum</span>
+        </div>
+        
+        <div class="header-center">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>
+                    <svg class="search-icon" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="header-right"><i class="fa-solid fa-cart-shopping"></i>
+
+        
+               
+            </div>
+            
+            <div class="auth-buttons"><i class="fa-solid fa-user-plus"></i>
+
+                
+                
+                        </svg>
+                </div>
+                <div class="auth-text">
+                    <a href="#login">Login</a>
+                    <a href="#register">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#programs">MUSEUM PROGRAMS</a></li>
+            <li><a href="#explore">EXPLORE</a></li>
+            <li><a href="#events">EVENTS</a></li>
+            <li><a href="#exhibitions">EXHIBITIONS</a></li>
+            <li><a href="#visit">VISIT US</a></li>
+        </ul>
+    </nav>
+<img src="../assets/images/homeimagetop.jpg">
+           <div>
+            <p style="text-align: center;">
+                Over the course of human <br>history, science has <br>developed from our<br>
+                early understanding of fire,<br> wind, water and earth
+                to<br> exploring every<br>
+                thing from galaxies far away<br> to the very building
+                blocks <br>of life itself.
+            </p>
+            <img src="../assets/images/kid-touches-robot.jpg">
+
+             <div class="container">
+
+        <h1 style="text-align: center;">cosmology</h1>
+         <div class="nav-container">
+            <p style="font-weight: bold;"><P class="center-bold"></P>
+            Explore the<br> wonders of our<br> cosmos. Our<br> fantastic exhibition,<br> 'The Sky Above Us',<br> explores the night<br> sky and what we<br> can see and know<br> about the universe<br>around us.We'll<br>locate the various<br>constellations and<br>galaxies thhat can<br>be seen and learn a<br>bit about the early<br>navigators who<br>used the stars to <br>travel by
+            </p>
+            <div class="nav-buttons">
+
+            <button class="nav-button home">Home</button>
+        <button class="nav-button events">Events</button>
+        <button class="nav-button programs">Programs</button>
+        <button class="nav-button exhibitions">Exhibitions</button>
+        <button class="nav-button explore">Explore</button>
+        <button class="nav-button visit">Visit Us</button>
+    </div>
+        </div>
+        <footer>
+        <div class="footer-content">
+            <div class="social-section">
+                <h2>Follow us</h2>
+                <div class="social-icons">
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="#1877f2">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </div>
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="#E4405F">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </div>
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="#000000">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                    </div>
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="#1DA1F2">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-section">
+                <h2>Pay With</h2>
+                <div class="payment-icons">
+                    <div class="payment-card visa">VISA</div>
+                    <div class="payment-card mastercard">MasterCard</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="museum-info">
+                <h3>Community</h3>
+                <h3>Science museum</h3>
+            </div>
+            <div class="contact-info">
+                <a href="tel:+256757886712">Tel. +256757886712</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
